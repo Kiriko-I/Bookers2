@@ -1,23 +1,21 @@
 <h2>User info</h2>
   <% if user.profile_image.attached? %>
-    <%= image_tag profile_image.image, size: "80x80" %>
+    <%= image_tag user.profile_image, size: "80x80" %>
   <% else %>
     <%= image_tag 'no_image', size: "80x80" %>
   <% end %>
-  <table>
-    <thead>
-      <tr>
-        <th>name</th>
-        <th>introduction</th>
-        <th colspan="2"></th>
-        <!--おそらく縦横違う-->
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.introduction %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th><%= user.name %></th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>introduction</th>
+      <th><%= user.introduction %></th>
+    </tr>
+  </tbody>
+</table>
