@@ -1,6 +1,6 @@
 <!--以下の記述は後ほど、_book.htmlに記述する。-->
 <h2>New book</h2>
-<%= form_with model: Book.new do |f| %>
+<%= form_with model: @book do |f| %>
   <label>Title</label><br>
   <%= f.text_field :title %><br>
   <label>Opinion</label><br>
@@ -8,7 +8,7 @@
   <%= f.submit 'Create Book' %><br>
 <% end %>
 
-<p>※Newb ookは、公開用User infoとともにサイドバーで共通に記載する。</p>
+<p>※Newbookは、公開用User infoとともにサイドバーで共通に記載する。</p>
 
 <h1>Books</h1>
   <table>
@@ -30,5 +30,3 @@
       <% end %>
     </tbody>
   </table>
-
-<% end %>
