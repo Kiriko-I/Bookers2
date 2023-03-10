@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @user.user_id = current_user.id
     @user = User.find(params[:id])
+    @users = User.all
   end
 
   def show
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to user_path(@user.id)
   end
-  
+
   def get_image
     if image.attached?
       image
