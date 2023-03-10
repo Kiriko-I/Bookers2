@@ -1,4 +1,26 @@
-<h2>Users</h2>
+<h2>User info</h2>
+  <% if @user.profile_image.attached? %>
+    <%= image_tag user.profile_image, size: "80x80" %>
+  <% else %>
+    <%= image_tag 'no_image', size: "80x80" %>
+  <% end %>
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th><%= user.name %></th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>introduction</th>
+      <th><%= user.introduction %></th>
+    </tr>
+  </tbody>
+</table>
+<%= link_to "⚙", edit_user_path(user.id) %><h2>Users</h2>
+<!--実験中-->
   <table>
     <thead>
       <tr>
@@ -13,7 +35,7 @@
       <tr>
         <td>
           <% if user.profile_image.attached? %>
-            <%= image_tag profile_image.image, size: "80x80" %>
+            <%= image_tag user.profile_image, size: "80x80" %>
           <% else %>
             <%= image_tag 'no_image', size: "80x80" %>
           <% end %>

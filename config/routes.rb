@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'home/about' => 'homes#about'
   resources :users, only: [:index, :show, :edit, :update]
   resources :books, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  patch 'users/:id' => 'users#update', as: 'update_user'
   
 end
 
