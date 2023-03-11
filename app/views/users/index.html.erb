@@ -8,19 +8,19 @@
   <thead>
     <tr>
       <th>name</th>
-      <th><%= user.name %></th>
+      <th><%= @user.name %></th>
       <th colspan="2"></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>introduction</th>
-      <th><%= user.introduction %></th>
+      <th><%= @user.introduction %></th>
     </tr>
   </tbody>
 </table>
-<%= link_to "⚙", edit_user_path(user.id) %><h2>Users</h2>
-<!--実験中-->
+<%= link_to "⚙", edit_user_path(@user.id) %><h2>Users</h2><br>
+
   <table>
     <thead>
       <tr>

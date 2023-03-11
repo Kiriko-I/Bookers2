@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @user.user_id = current_user.id
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
     @users = User.all
   end
 
@@ -20,14 +19,6 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
-  def get_image
-    if image.attached?
-      image
-    else
-      'no_image.jpg'
-    end
-  end
-  # サイズを調整できるようにしてから使う。
 
   private
 
