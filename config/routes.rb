@@ -3,10 +3,8 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get 'home/about' => 'homes#about'
   resources :users, only: [:index, :show, :edit, :update]
-  resources :books, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :books, only: [:index, :show, :new, :create, :edit]
   patch 'users/:id' => 'users#update', as: 'update_user'
-  
+  patch 'books/:id' => 'books#update', as: 'update_book'
+  delete 'books/:id' => 'books#destroy', as: 'destroy_book'
 end
-
-# routing順番大切！
-# editがgetかpatchか確認する
