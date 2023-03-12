@@ -1,3 +1,10 @@
-<h2>Books detail</h2>
-<p><%= @book.title %></p>
-<p><%= @book.body %></p>
+<h2>Book detail</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td><%= link_to @book.id %></td>
+        <td><%= link_to @book.title, book_path(@book.id) %></td>
+        <td><%= @book.body %></td>
+      </tr>
+    </tbody>
+  </table>
