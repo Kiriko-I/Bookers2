@@ -1,4 +1,25 @@
-<%= render "users/user", user: @user %>
+<h2>User info</h2>
+  <% if @users.profile_image.attached? %>
+    <%= image_tag @users.profile_image, size: "80x80" %>
+  <% else %>
+    <%= image_tag 'no_image', size: "80x80" %>
+  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th><%= @users.name %></th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>introduction</th>
+        <th><%= @users.introduction %></th>
+      </tr>
+    </tbody>
+  </table>
+<%= link_to "⚙", edit_user_path(@users.id) %>
 
 <%= render "books/book", book: @book %>
 
@@ -16,9 +37,9 @@
       <% @books.each do |book| %>
       <tr>
         <td>
-          <%= link_to user_path(book.user_id) do %>
-            <% if .profile_image.attached? %>
-              <%= image_tag .profile_image, size: "80x80" %>
+          <%= link_to user_path(book.user.id) do %>
+            <% if book.user.profile_image.attached? %>
+              <%= image_tag book.user.profile_image, size: "80x80" %>
             <% else %>
               <%= image_tag 'no_image', size: "80x80" %>
             <% end %><br>
