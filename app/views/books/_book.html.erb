@@ -6,5 +6,7 @@
     <div>
       <label>Opinion</label></div>
       <%= f.text_area :body %>
-    <div><%= f.submit 'Create Book' %></div>
+    <div class="actions">
+      <input type="submit" name="commit" value="Create Book" class="btn bg-success text-white">
+    </div>
   <% end %>
